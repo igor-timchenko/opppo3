@@ -1,0 +1,5 @@
+add Pencil 4.99 79243501185 50 red
+add Pen 12.99 79243501185 gel 0.5
+add Paper 1.99 79243501185 1 70x50
+rem itemPrice > 5.99
+print
