@@ -1,1 +1,31 @@
+def find_gift_giver():
+  # Возможные друзья
+  friends = ['Стрекоза', 'Огонёк', 'Ушастик']
+  # Перебираем все возможные указания
+  for s in friends:
+    for o in friends:
+      for u in friends:
+        # Убедимся, что никто не указывает на себя
+        if s != o and s != u and o != s and o != u and u != s and u != o:
+          # Стрекоза говорит правду, значит, её указание верное
+          truth_giver = s
+          # Определяем, кто на кого указывает
+          points = {
+          'Стрекоза': o,
+          'Огонёк': u,
+          'Ушастик': s
+          }
+            # Теперь проверяем условие о том, что если бы они указывали на другого,
+            # то Ушастик был бы единственным, кто говорит правду.
+          new_points = {
+          'Стрекоза': [friend for friend in friends if friend != points['Стрекоза'] and friend != 'Стрекоза'][0],
+          'Огонёк': [friend for friend in friends if friend != points['Огонёк'] and friend != 'Огонёк'][0],
+          'Ушастик': [friend for friend in friends if friend != points['Ушастик'] and friend != 'Ушастик'][0]
+          }
+          # Проверяем условие: Ушастик должен быть единственным, кто говорит правду
+          if (new_points['Стрекоза'] == 'Ушастик' and
+            new_points['Огонёк'] == 'Стрекоза' and
+            new_points['Ушастик'] == 'Огонёк'):
 
+            print(f"Подарок подарил: {truth_giver}")
+find_gift_giver()
