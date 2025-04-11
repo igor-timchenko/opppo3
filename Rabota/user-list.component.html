@@ -1,0 +1,8 @@
+<h1>Список пользователей</h1>
+   <ul>
+     <li *ngFor="let user of users">
+       {{ user.first_name }} {{ user.last_name }}
+       <button (click)="viewUser(user.id)">Просмотр</button>
+       <button (click)="deleteUser(user.id)">Удалить</button>
+     </li>
+   </ul>
