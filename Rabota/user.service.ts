@@ -30,3 +30,10 @@ export class UserService {
     return this.http.get(${this.baseUrl}/unknown);
   }
 }
+login(credentials: any): Observable<any> {
+  return this.http.post(${this.baseUrl}/login, credentials);
+}
+
+register(credentials: any): Observable<any> {
+  return this.http.post(${this.baseUrl}/register, credentials);
+}
