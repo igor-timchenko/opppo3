@@ -1,1 +1,12 @@
-
+app/
+├─ data/
+│  ├─ local/ (Room entities, DAO)
+│  ├─ remote/ (Retrofit, DTOs)
+│  ├─ repository/ (репозитории)
+├─ domain/ (модели, use cases)
+├─ presentation/
+│  ├─ characters/ (экран списка)
+│  ├─ details/ (детали персонажа)
+│  ├─ filters/ (экран фильтров)
+│  ├─ navigation/ (навигация)
+├─ di/ (Dagger Hilt модули)
